@@ -1,0 +1,32 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "author": {
+    "email": "ririnto@kakao.com",
+    "name": "HAKJAE LEE"
+  },
+  "description": "Clear, relevant writing with readable Markdown, dependency diagrams, and precise mathematical relationships.",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "capabilities": [],
+        "defaultPrompt": [
+          "Apply Clear Writing to this response.",
+          "Revise this draft for clarity, relevance, and readable formatting."
+        ],
+        "developerName": "HAKJAE LEE",
+        "displayName": "Clear Writing",
+        "longDescription": "Draft and revise responses, documents, recommendations, progress updates, and handoffs. Apply meaningful headings and lists, GitHub Alerts with explicit paragraph spacing, Mermaid dependency graphs, and LaTeX. Preserve factual scope and remove irrelevant context and filler.",
+        "shortDescription": "Clear, readable writing"
+      }
+    }
+  },
+  "keywords": [
+    "writing",
+    "editing",
+    "markdown",
+    "mermaid",
+    "latex"
+  ],
+  "name": "clear-writing",
+  "version": "1.0.0"
+}

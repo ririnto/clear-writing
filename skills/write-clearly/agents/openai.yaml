@@ -1,0 +1,7 @@
+interface:
+  display_name: "Clear Writing"
+  short_description: "Clear, relevant prose with readable Markdown"
+  default_prompt: "Use $write-clearly to write or revise this response with clear structure and readable formatting."
+
+policy:
+  allow_implicit_invocation: true

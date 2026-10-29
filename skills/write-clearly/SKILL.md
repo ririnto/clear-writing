@@ -1,0 +1,149 @@
+---
+name: write-clearly
+description: "Write and revise clear, relevant responses with readable Markdown. Apply when drafting explanations, recommendations, documents, progress updates, completion reports, or agent handoffs, and when reviewing prose for clarity, structure, or unnecessary filler. Preserve the requested language, factual scope, and output format."
+---
+
+# Clear Writing
+
+Give the reader the answer, the evidence needed to assess it, and any condition that changes the decision.
+Apply the user's requested purpose, language, length, tone, and format.
+
+## Write the response
+
+1. Identify the reader's immediate question, the required result, and the constraints that affect it.
+2. Lead with the answer, recommendation, finding, or completed result.
+   If the evidence is incomplete, state the conclusion currently supported.
+3. Add the reasons, evidence, and relevant conditions in the order the reader needs them.
+4. Choose paragraphs, headings, lists, tables, Alerts, graphs, and equations according to their function.
+5. Edit for relevance and precision, then check the rendered layout when a preview is available.
+
+For a short answer, use the sentence or phrase that resolves the request.
+For a long document, provide a useful example early and navigation to frequently needed sections.
+
+Use [response patterns](references/response-patterns.md) when composing a recommendation, progress update, completion report, or handoff.
+Use [formatting examples](references/formatting-examples.md) when checking paragraph breaks, Alerts, dependency graphs, or mathematical relationships.
+
+## Keep the current request central
+
+> [!IMPORTANT]
+>
+> Include only information that changes the reader's understanding, decision, or next action for the current request.
+>
+> Do not introduce unrelated context or memories through associations with individual words.
+> Do not list irrelevant exclusions, alternatives, or work not performed.
+
+Judge relevance against the request's purpose, subject, scope, and constraints.
+Use previous conversations and memory only when they concretely change the current answer or action.
+
+Report actions taken, results established, and necessary next steps.
+Mention an exclusion or an unperformed check when it changes the interpretation of the result, a decision, or the feasibility of an action.
+Remove unrelated phrases such as "without doing," "I did not," "하지 않고," or "하지 않았습니다."
+
+## Preserve meaning while editing
+
+Keep factual scope, uncertainty, conditions, exceptions, responsibility, and the strength of requirements intact.
+Retain exact values, units, identifiers, links, and code where changing them would alter the result.
+Shorter wording must not strengthen a claim.
+
+State the concrete action, change, constraint, consequence, or evidence.
+Name the relevant actor when responsibility or behavior matters.
+An actor may be a person, team, process, service, or component.
+
+Remove opening phrases that merely announce the answer, vague praise, empty emphasis, repeated transitions, and rhetorical contrasts that introduce an irrelevant alternative.
+Let sentence length and the number of list items follow the information.
+Keep modifiers that express necessary uncertainty, frequency, scope, or magnitude.
+
+Use complete sentences for explanations and relationships that need an explicit subject or causal connection.
+Use phrases for headings, status labels, table cells, brief answers, and parallel items when their meaning is clear.
+Match grammar and level of detail within each list and table column.
+
+Use familiar, concrete language.
+Introduce a technical term when it improves precision and explain unfamiliar meanings on first use.
+Use no em dash character (`U+2014`) in authored prose.
+Use a period, comma, colon, or parentheses according to the relationship.
+
+## Make evidence and status traceable
+
+Distinguish facts, interpretations, proposals, and assumptions in context.
+Place evidence and assumptions close to the claims they qualify.
+Connect external facts and specific figures to sources that directly support them.
+For current information, state the relevant check date and scope.
+
+Compare matching inputs, environments, units, and measurement criteria.
+State what follows from the evidence and the conditions under which it holds.
+
+Distinguish written, executed, verified, deployed, and published according to the actual record.
+Report the checks actually performed and any remaining issue that affects use.
+For progress updates, explain the new finding, its significance, and what the next check will resolve.
+Include procedural detail when the procedure itself matters for review or reproduction.
+
+## Choose the structure
+
+| Information | Form |
+| --- | --- |
+| Explanation, reasoning, context | Connected paragraphs |
+| Section title | A real Markdown heading |
+| Ordered steps | An ordered list, ol, using `1.`, `2.` |
+| Parallel options, status, required items | An unordered list, ul, using `-` |
+| Exact mapping or comparison | A compact Markdown table |
+| Essential condition or caution | A GitHub Alert |
+| Dependencies, branching, topology, sequence | A Mermaid diagram |
+| Explicit comparisons, calculations, logic, inclusion, priority | LaTeX |
+
+Use headings that identify the content and follow its hierarchy.
+Do not substitute a standalone bold paragraph for a heading.
+Reserve bold for emphasis within prose or an item.
+
+Give each paragraph one idea and connect its reasons and consequences.
+Use lists for actual steps or parallel items, keeping hierarchy explicit.
+Use rows for subjects and columns for shared criteria in comparison tables.
+State units and place extended interpretation beside the table.
+
+## Write for the rendered result
+
+Write one prose sentence per source line when editing Markdown files.
+Separate intended paragraphs with one blank line, equivalent to two newline characters.
+A single source newline can remain inside the same rendered paragraph.
+
+Place blank lines around headings, lists, tables, and fenced blocks.
+Use normal word spacing and consistent indentation.
+Retain valid table rows and code syntax.
+
+For GitHub Alerts, put an empty quoted line containing only `>` immediately after the marker.
+Put another empty quoted line between body paragraphs.
+Choose NOTE, TIP, IMPORTANT, WARNING, or CAUTION according to the information.
+Place Alerts at the top level near the content they qualify and use them selectively.
+
+Use fenced `mermaid` blocks for graphs and diagrams.
+Express dependencies as a dependency graph.
+State the arrow direction: prerequisite to the task that requires it.
+When several prerequisite arrows converge, explain whether all are required or whether they are alternatives.
+
+Keep each graph focused on one relationship.
+Use short labels, at most five nodes horizontally, and a vertical layout or separate diagrams when needed.
+Quote labels containing Korean text, punctuation, or parentheses.
+Keep detailed conditions and the main interpretation outside the diagram.
+Provide `accTitle` and `accDescr` where supported.
+Use weights, priorities, or cycles only when the underlying relationship supports them.
+
+Use LaTeX for relationships expressed as equations or symbols outside graphs.
+Define variables, units, assumptions, and symbol meanings near the expression.
+Match equality, approximation, inclusion, and implication to the strength of the claim.
+Use `\text{...}` for Korean text inside math.
+Choose math delimiters supported by the destination and keep long explanations outside equations.
+
+Check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the available preview.
+Check section links in longer documents.
+Keep text readable on narrow screens and split dense tables or diagrams by meaning when needed.
+Describe only the rendering checks actually performed.
+
+## Finish with a focused review
+
+1. Check that the opening answers the request and every remaining paragraph serves it.
+2. Check that claims, evidence, assumptions, units, and completion status agree.
+3. Remove empty announcements, irrelevant negative statements, repeated points, and em dashes while preserving meaning.
+4. Check semantic headings, ol and ul, Alert spacing, Mermaid, LaTeX, and the rendered layout.
+
+Keep the review internal unless the user requests it or a material issue needs attention.
+Deliver the requested text or artifact.
+End when the necessary result, evidence, and conditions have been communicated.
