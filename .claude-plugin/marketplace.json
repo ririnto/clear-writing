@@ -1,0 +1,13 @@
+{
+  "name": "clear-writing",
+  "owner": {
+    "name": "ririnto"
+  },
+  "plugins": [
+    {
+      "name": "clear-writing",
+      "source": "./",
+      "description": "Write and revise clear, relevant responses with readable Markdown."
+    }
+  ]
+}

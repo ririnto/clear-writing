@@ -3,15 +3,65 @@
 Use Clear Writing to revise a draft, write documentation, compare options, or turn work notes into a concise update.
 Tell the agent what you need and provide the material it should use.
 
-[Get started](#get-started) · [Other agents](#other-agents) · [Example requests](#example-requests) · [Adjust the result](#adjust-the-result)
+[Install](#install-from-a-marketplace) · [Use Clear Writing](#use-clear-writing) · [Example requests](#example-requests) · [Local packages](#local-packages) · [Adjust the result](#adjust-the-result)
 
-## Get started
+## Install from a marketplace
 
-1. If Clear Writing is available to your ChatGPT account, open [Clear Writing in ChatGPT](https://chatgpt.com/plugins/plugins_6ae33d6bae648191912be7759cde15cc) and select the plus button to install it.
+This repository hosts the `clear-writing` marketplace for Claude Code, Copilot CLI, Codex CLI, and Cursor.
+Choose your client below.
+
+### Claude Code
+
+Run these commands in a terminal:
+
+```sh
+claude plugin marketplace add ririnto/clear-writing
+claude plugin install clear-writing@clear-writing
+```
+
+Start a new session with `claude`, then use `/clear-writing:write-clearly` in your prompt.
+
+### GitHub Copilot CLI
+
+Run these commands in a terminal:
+
+```sh
+copilot plugin marketplace add ririnto/clear-writing
+copilot plugin install clear-writing@clear-writing
+```
+
+Start a new session with `copilot`, then use `/write-clearly` in your prompt.
+
+### Codex CLI
+
+Run these commands in a terminal:
+
+```sh
+codex plugin marketplace add ririnto/clear-writing
+codex plugin add clear-writing@clear-writing
+```
+
+Start a new session with `codex`, then use `$write-clearly` in your prompt.
+
+To install through the interactive browser, register the marketplace with the first command, open `/plugins` in Codex, and select Clear Writing from the `clear-writing` marketplace.
+Start a new session after installation.
+
+### Cursor
+
+1. Open **Customize** in Cursor's sidebar.
+2. Select **From GitHub Repository** and enter `https://github.com/ririnto/clear-writing`.
+3. Select **Clear Writing**, choose **Install**, and choose user or project scope.
+4. In Agent chat, type `/` and select **write-clearly**.
+
+### ChatGPT
+
+1. If Clear Writing is available to your account, open [Clear Writing in ChatGPT](https://chatgpt.com/plugins/plugins_6ae33d6bae648191912be7759cde15cc) or find it in **Plugins**, then select the plus button to install it.
 2. Start a new chat.
-3. Type `@`, select **Clear Writing** or its **write-clearly** skill, and send your request with the draft, notes, or source material.
+3. Type `@` and select **Clear Writing** or its **write-clearly** skill.
 
-For a quick edit, paste your text after this request:
+## Use Clear Writing
+
+Select the skill using your client's invocation method above, then send a request with your draft, notes, or source material:
 
 ```text
 Revise this draft for clarity and easy reading.
@@ -26,19 +76,6 @@ Return the revised text in English.
 > Include the intended reader and output format when they matter.
 >
 > For example: “Write a Korean update for the team, under 150 words.”
-
-## Other agents
-
-The plugin is named `clear-writing`, and its skill is named `write-clearly`.
-For the local package commands below, replace `/absolute/path/to/clear-writing` with the directory containing `plugin.json`.
-
-- **Claude Code:** Start with `claude --plugin-dir /absolute/path/to/clear-writing`, then enter `/clear-writing:write-clearly` with your request.
-- **Copilot CLI:** Run `copilot plugin install /absolute/path/to/clear-writing`, start `copilot`, then enter `/write-clearly` with your request.
-- **Cursor:** Copy the package contents to `~/.cursor/plugins/local/clear-writing/`, with `plugin.json` directly inside that directory.
-  Run **Developer: Reload Window**, then type `/` in Agent chat and select `write-clearly`.
-  Managed workspaces must allow local plugin imports.
-- **Codex CLI:** With Clear Writing installed and enabled, start a new session and prefix your request with `$write-clearly`.
-  Use `/plugins` to manage installed plugins.
 
 ## Example requests
 
@@ -94,6 +131,24 @@ Write in English.
 
 <task notes, decisions, paths, and next action>
 ```
+
+## Local packages
+
+To work from a local checkout, clone the repository:
+
+```sh
+git clone https://github.com/ririnto/clear-writing.git
+```
+
+Replace `/absolute/path/to/clear-writing` below with the checkout's absolute path.
+
+- **Claude Code:** Run `claude --plugin-dir /absolute/path/to/clear-writing`, then invoke `/clear-writing:write-clearly`.
+- **Copilot CLI:** Run `copilot plugin install /absolute/path/to/clear-writing`, start a new `copilot` session, then invoke `/write-clearly`.
+- **Codex CLI:** Run `codex plugin marketplace add /absolute/path/to/clear-writing`, then `codex plugin add clear-writing@clear-writing`.
+  Start a new `codex` session and invoke `$write-clearly`.
+- **Cursor:** Copy the package contents to `~/.cursor/plugins/local/clear-writing/`, with `plugin.json` directly inside that directory.
+  Run **Developer: Reload Window**, then type `/` in Agent chat and select **write-clearly**.
+  Managed workspaces must allow local plugin imports.
 
 ## Adjust the result
 

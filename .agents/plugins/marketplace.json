@@ -1,0 +1,20 @@
+{
+  "name": "clear-writing",
+  "interface": {
+    "displayName": "Clear Writing"
+  },
+  "plugins": [
+    {
+      "name": "clear-writing",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
