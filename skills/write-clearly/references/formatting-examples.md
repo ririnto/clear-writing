@@ -21,7 +21,7 @@ Use one sentence per source line in authored Markdown while preserving intention
 
 ## GitHub Alert
 
-The empty quoted line after the marker is required by this writing policy.
+Put an empty quoted line after the Alert marker and between body paragraphs.
 
 ```markdown
 > [!IMPORTANT]
@@ -37,8 +37,6 @@ The empty quoted line after the marker is required by this writing policy.
 >
 > Measure again if either changes.
 
-The blank quoted lines separate the title and body paragraphs.
-
 | Marker | Purpose |
 | --- | --- |
 | `[!NOTE]` | Supporting information |
@@ -51,21 +49,20 @@ The blank quoted lines separate the title and body paragraphs.
 
 Use a `mermaid` fence.
 In this graph, an arrow points from a prerequisite to the task that requires it.
-Both incoming prerequisites are required before drafting.
 
 ```mermaid
 flowchart TD
-    accTitle: Dependencies in writing a response
-    accDescr: Request scope precedes evidence and structure. Drafting needs both results. Final review needs the draft.
-    A["Define scope"] --> B["Organize evidence"]
-    A --> C["Design structure"]
-    B --> D["Write draft"]
+    accTitle: Dependencies in publishing a release
+    accDescr: A release build needs passing tests and updated documentation. Publishing needs the release build.
+    A["Prepare changes"] --> B["Run tests"]
+    A --> C["Update documentation"]
+    B --> D["Build release"]
     C --> D
-    D --> E["Final review"]
+    D --> E["Publish release"]
 ```
 
-Evidence and structure can be developed in parallel once the scope is defined.
-Drafting depends on both results.
+Tests and documentation can run in parallel after the changes are ready.
+The release build requires both results.
 
 Choose another Mermaid diagram type when the relationship is a sequence, state transition, or data flow.
 State what the arrows mean for that diagram.
