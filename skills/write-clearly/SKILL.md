@@ -35,9 +35,12 @@ Use [formatting examples](references/formatting-examples.md) when checking parag
 Judge relevance against the request's purpose, subject, scope, and constraints.
 Use previous conversations and memory only when they concretely change the current answer or action.
 
+Remove generic disclaimers, repeated explanations, and sentences narrating how the text was drafted, edited, or reviewed.
+Deliver the requested content directly.
+Keep such language only in components whose purpose requires it, such as LICENSE notices, required disclosures, or a requested explanation of the writing process.
+
 Report actions taken, results established, and necessary next steps.
-Mention an exclusion or an unperformed check when it changes the interpretation of the result, a decision, or the feasibility of an action.
-Remove unrelated phrases such as "without doing," "I did not," "하지 않고," or "하지 않았습니다."
+Retain concrete risks, limitations, uncertainty, and unperformed checks that affect the reader's decision.
 
 ## Preserve meaning while editing
 
@@ -74,7 +77,6 @@ State what follows from the evidence and the conditions under which it holds.
 
 Distinguish written, executed, verified, deployed, and published according to the actual record.
 Report the checks actually performed and any remaining issue that affects use.
-For progress updates, explain the new finding, its significance, and what the next check will resolve.
 Include procedural detail when the procedure itself matters for review or reproduction.
 
 ## Choose the structure
@@ -135,15 +137,13 @@ Choose math delimiters supported by the destination and keep long explanations o
 Check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the available preview.
 Check section links in longer documents.
 Keep text readable on narrow screens and split dense tables or diagrams by meaning when needed.
-Describe only the rendering checks actually performed.
 
 ## Finish with a focused review
 
 1. Check that the opening answers the request and every remaining paragraph serves it.
 2. Check that claims, evidence, assumptions, units, and completion status agree.
-3. Remove empty announcements, irrelevant negative statements, repeated points, and em dashes while preserving meaning.
+3. Remove generic disclaimers, repetition, writing-process narration, empty announcements, and em dashes, subject to the purpose-based exceptions above.
 4. Check semantic headings, ol and ul, Alert spacing, Mermaid, LaTeX, and the rendered layout.
 
-Keep the review internal unless the user requests it or a material issue needs attention.
-Deliver the requested text or artifact.
+Keep the review internal unless it is the requested deliverable.
 End when the necessary result, evidence, and conditions have been communicated.

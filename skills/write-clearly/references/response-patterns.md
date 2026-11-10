@@ -24,10 +24,7 @@ Adapt the language and level of detail to the reader.
 
 ## Completion report
 
-These are fictional examples.
-Use actual actions and verification records in a real report.
-
-### Korean
+### Korean example
 
 > 구간 끝에서 멈추던 반복 재생을 수정했습니다.
 > 종료 지점에 도달하면 시작 위치로 이동해 재생을 이어갑니다.
@@ -37,7 +34,7 @@ Use actual actions and verification records in a real report.
 >
 > 배속 변경과 함께 사용할 때의 동작은 추가 확인이 필요합니다.
 
-### English
+### English example
 
 > Fixed playback stopping at the end of a looped segment.
 > Playback now returns to the start and continues.
@@ -47,13 +44,9 @@ Use actual actions and verification records in a real report.
 >
 > Playback speed changes combined with looping still need verification.
 
-The opening states the result and changed behavior.
-The list gives parallel status items.
-The final condition limits the verification claim.
-
 ## Recommendation supported by a comparison
 
-This is a fictional comparison using the same hardware and input with 16 concurrent requests.
+Example inputs: the same hardware and input with 16 concurrent requests.
 
 Recommend Option B under these conditions.
 It satisfies both limits:
@@ -76,9 +69,6 @@ Option A exceeds the latency limit.
 Option B meets both limits.
 Measure both again under matching conditions if the input or concurrency changes.
 
-The recommendation follows from the stated criteria.
-For a real comparison, attach the measurement record or the source of the figures.
-
 ## Progress and handoff
 
 For progress, state what the latest check established and how it changes the work.
@@ -91,18 +81,14 @@ For a handoff, give the receiving agent enough context to continue:
 - Relevant paths, artifacts, or records
 - Next action and any actual blocker
 
-Keep the level of detail proportional to what the receiving agent needs.
-Use the language required for that handoff.
-
 ## Edit without changing scope
-
-The following examples preserve the underlying claim while removing empty framing.
 
 | Draft | Revision |
 | --- | --- |
 | It is important to note that the cache expires after 60 seconds. | The cache expires after 60 seconds. |
+| This is for informational purposes only. The cache expires after 60 seconds. | The cache expires after 60 seconds. |
+| The cache expires after 60 seconds. That means it lasts one minute. | The cache expires after 60 seconds. |
+| I shortened the sentences and reviewed the wording. The cache expires after 60 seconds. | The cache expires after 60 seconds. |
 | Some requests may fail during a restart. | Some requests may fail during a restart. |
+| LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. |
 | This is a major improvement in how errors are handled: the parser now reports the input offset. | The parser now reports the input offset. |
-
-Retain qualifiers that carry meaning.
-The second example is already precise enough to keep.
