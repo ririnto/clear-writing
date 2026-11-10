@@ -20,8 +20,7 @@ Apply the user's requested purpose, language, length, tone, and format.
 For a short answer, use the sentence or phrase that resolves the request.
 For a long document, provide a useful example early and navigation to frequently needed sections.
 
-Use [response patterns](references/response-patterns.md) when composing a recommendation, progress update, completion report, or handoff.
-Use [formatting examples](references/formatting-examples.md) when checking paragraph breaks, Alerts, dependency graphs, or mathematical relationships.
+Optional examples: [responses](references/response-patterns.md) and [formatting](references/formatting-examples.md).
 
 ## Keep the current request central
 
@@ -79,6 +78,9 @@ Distinguish written, executed, verified, deployed, and published according to th
 Report the checks actually performed and any remaining issue that affects use.
 Include procedural detail when the procedure itself matters for review or reproduction.
 
+For progress updates, state the new finding, its effect, and what the next check will resolve.
+For handoffs, include the current state, decisions that constrain remaining work, relevant paths or records, the next action, and any blocker.
+
 ## Choose the structure
 
 | Information | Form |
@@ -100,6 +102,7 @@ Give each paragraph one idea and connect its reasons and consequences.
 Use lists for actual steps or parallel items, keeping hierarchy explicit.
 Use rows for subjects and columns for shared criteria in comparison tables.
 State units and place extended interpretation beside the table.
+In before-and-after editing tables, put each sentence on its own row and leave a cell empty when that version has no corresponding sentence.
 
 ## Write for the rendered result
 
@@ -113,12 +116,14 @@ Retain valid table rows and code syntax.
 
 For GitHub Alerts, put an empty quoted line containing only `>` immediately after the marker.
 Put another empty quoted line between body paragraphs.
-Choose NOTE, TIP, IMPORTANT, WARNING, or CAUTION according to the information.
+Use NOTE for supporting information, TIP for practical advice, IMPORTANT for an essential condition, WARNING for an immediate problem, and CAUTION for risk or potential loss.
 Place Alerts at the top level near the content they qualify and use them selectively.
 
 Use fenced `mermaid` blocks for graphs and diagrams.
-Express dependencies as a dependency graph.
-State the arrow direction: prerequisite to the task that requires it.
+Choose a diagram type that matches dependencies, sequence, state transitions, or data flow.
+Express dependencies as a dependency graph, with arrows from a prerequisite to the task that requires it.
+State what arrows mean in other diagram types.
+For numerical charts, preserve values, axes, and units.
 When several prerequisite arrows converge, explain whether all are required or whether they are alternatives.
 
 Keep each graph focused on one relationship.
@@ -133,6 +138,7 @@ Define variables, units, assumptions, and symbol meanings near the expression.
 Match equality, approximation, inclusion, and implication to the strength of the claim.
 Use `\text{...}` for Korean text inside math.
 Choose math delimiters supported by the destination and keep long explanations outside equations.
+Use a code block for source syntax and the destination's math syntax for a rendered equation.
 
 Check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the available preview.
 Check section links in longer documents.

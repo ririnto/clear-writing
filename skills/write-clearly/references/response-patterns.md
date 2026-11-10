@@ -1,26 +1,4 @@
-# Response Patterns
-
-Choose the pattern that fits the request and include the parts needed to resolve it.
-Adapt the language and level of detail to the reader.
-
-## Navigation
-
-- [Select a pattern](#select-a-pattern)
-- [Completion report](#completion-report)
-- [Recommendation supported by a comparison](#recommendation-supported-by-a-comparison)
-- [Progress and handoff](#progress-and-handoff)
-- [Edit without changing scope](#edit-without-changing-scope)
-
-## Select a pattern
-
-| Request | Lead with | Follow with |
-| --- | --- | --- |
-| Question | Answer or supported conclusion | Reasons and necessary conditions |
-| Recommendation | Choice and criteria | Comparable evidence and conditions that change the choice |
-| Investigation | Main finding | Evidence, interpretation, uncertainty |
-| Work result | Changed behavior or deliverable | Reason, actual checks, remaining issues |
-| Progress update | New finding | Its effect and the purpose of the next check |
-| Handoff | Current state and next task | Decisions, relevant locations, records |
+# Response Examples
 
 ## Completion report
 
@@ -69,26 +47,17 @@ Option A exceeds the latency limit.
 Option B meets both limits.
 Measure both again under matching conditions if the input or concurrency changes.
 
-## Progress and handoff
-
-For progress, state what the latest check established and how it changes the work.
-Name the next check and the uncertainty it will resolve.
-
-For a handoff, give the receiving agent enough context to continue:
-
-- Current result and completion state
-- Decisions that constrain the remaining work
-- Relevant paths, artifacts, or records
-- Next action and any actual blocker
-
 ## Edit without changing scope
 
 | Draft | Revision |
 | --- | --- |
 | It is important to note that the cache expires after 60 seconds. | The cache expires after 60 seconds. |
-| This is for informational purposes only. The cache expires after 60 seconds. | The cache expires after 60 seconds. |
-| The cache expires after 60 seconds. That means it lasts one minute. | The cache expires after 60 seconds. |
-| I shortened the sentences and reviewed the wording. The cache expires after 60 seconds. | The cache expires after 60 seconds. |
+| This is for informational purposes only. | The cache expires after 60 seconds. |
+| The cache expires after 60 seconds. | |
+| The cache expires after 60 seconds. | The cache expires after 60 seconds. |
+| That means it lasts one minute. | |
+| I shortened the sentences and reviewed the wording. | The cache expires after 60 seconds. |
+| The cache expires after 60 seconds. | |
 | Some requests may fail during a restart. | Some requests may fail during a restart. |
 | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. |
 | This is a major improvement in how errors are handled: the parser now reports the input offset. | The parser now reports the input offset. |
