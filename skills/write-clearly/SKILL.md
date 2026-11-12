@@ -141,7 +141,8 @@ Use rows for subjects and columns for shared criteria in comparison tables.
 State units and place extended interpretation beside the table.
 In before-and-after editing tables, align each source passage with its revision.
 When one source passage becomes several revised statements or list items, put the full source in the first row and leave the source cell empty in the following rows.
-Leave a cell empty when that version has no corresponding item, including continuation rows.
+Use an empty source cell for a continuation row.
+Write `Delete` in the revision cell when the source text should be removed.
 Table cells may use concise phrases or direct assertions; complete sentences and final periods are optional.
 Keep required notices and exact quoted text unchanged.
 
