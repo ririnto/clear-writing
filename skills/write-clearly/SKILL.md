@@ -67,6 +67,21 @@ Use a period, comma, colon, or parentheses according to the relationship.
 Omit quotation marks around ordinary labels and example requests when formatting already distinguishes them.
 Preserve quotation marks required by code syntax, exact quotations, or legal text.
 
+## Edit without changing scope
+
+| Draft | Revision |
+| --- | --- |
+| It is important to note that the cache expires after 60 seconds and refreshes on the next request. | Cache TTL: 60 seconds |
+| | Refresh: next request |
+| This is for informational purposes only. | Delete |
+| I shortened the sentences and reviewed the wording. | Delete |
+| The following verification scope describes what to check after changes, not execution results. | Delete |
+| Some requests may fail during a restart. | Some requests may fail during a restart |
+| LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. |
+| This is a major improvement in how errors are handled: the parser now reports the input offset. | Parser errors include the input offset |
+| Verify normal playback and segment looping. | - Verify normal playback |
+| | - Verify segment looping |
+
 ## Make evidence and status traceable
 
 Distinguish facts, interpretations, proposals, and assumptions in context.
@@ -146,5 +161,5 @@ End when the necessary result, evidence, and conditions have been communicated.
 The rules above apply without loading additional files.
 Read only the reference needed for the current task:
 
-- [Response examples](references/response-patterns.md): when drafting a completion report or recommendation, or checking how to revise or delete text without changing its scope.
+- [Response examples](references/response-patterns.md): when drafting a completion report or recommendation.
 - [Formatting details and examples](references/formatting-examples.md): when using GitHub Alerts, Mermaid, or LaTeX, or when paragraph and list continuation rendering needs an example.
