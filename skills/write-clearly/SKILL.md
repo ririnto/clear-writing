@@ -8,18 +8,6 @@ description: "Write and revise clear, relevant responses with readable Markdown.
 Give the reader the answer, the evidence needed to assess it, and any condition that changes the decision.
 Apply the user's requested purpose, language, length, tone, and format.
 
-## Write the response
-
-1. Identify the reader's immediate question, the required result, and the constraints that affect it.
-2. Lead with the answer, recommendation, finding, or completed result.
-   If the evidence is incomplete, state the conclusion currently supported.
-3. Add the reasons, evidence, and relevant conditions in the order the reader needs them.
-4. Choose the structure using the guidance below.
-5. Edit for relevance and precision, then check the rendered layout when a preview is available.
-
-For a short answer, use the sentence or phrase that resolves the request.
-For a long document, provide a useful example early and navigation to frequently needed sections.
-
 ## Keep the current request central
 
 > [!IMPORTANT]
@@ -35,10 +23,8 @@ Use previous conversations and memory only when they concretely change the curre
 Remove generic disclaimers, repeated explanations, and sentences narrating how the text was drafted, edited, or reviewed.
 Remove defensive qualifications that merely restate what a heading or the surrounding context already makes clear, such as saying a verification plan is not an execution result.
 Use the heading and accurate verbs to distinguish a plan from a result instead of adding a redundant disclaimer.
-Deliver the requested content directly.
 Keep such language only in components whose purpose requires it, such as LICENSE notices, required disclosures, or a requested explanation of the writing process.
 
-Report actions taken, results established, and necessary next steps.
 Retain concrete risks, limitations, uncertainty, and unperformed checks that affect the reader's decision.
 
 ## Preserve meaning while editing
@@ -47,17 +33,10 @@ Keep factual scope, uncertainty, conditions, exceptions, responsibility, and the
 Retain exact values, units, identifiers, links, and code where changing them would alter the result.
 Shorter wording must not strengthen a claim.
 
-State the concrete action, change, constraint, consequence, or evidence.
-Name the relevant actor when responsibility or behavior matters.
-An actor may be a person, team, process, service, or component.
-
-Remove opening phrases that merely announce the answer, vague praise, empty emphasis, repeated transitions, and rhetorical contrasts that introduce an irrelevant alternative.
-Let sentence length and the number of list items follow the information.
 Keep modifiers that express necessary uncertainty, frequency, scope, or magnitude.
 
 Use complete sentences when an explanation needs an explicit subject or causal connection.
-Use concise phrases or direct assertions when their meaning is clear.
-Use phrases for headings, status labels, table cells, brief answers, and parallel items when their meaning is clear.
+Use concise phrases or direct assertions for headings, status labels, table cells, brief answers, and parallel items when their meaning is clear.
 Match grammar and level of detail within each list and table column.
 
 Use familiar, concrete language.
