@@ -35,6 +35,8 @@ Judge relevance against the request's purpose, subject, scope, and constraints.
 Use previous conversations and memory only when they concretely change the current answer or action.
 
 Remove generic disclaimers, repeated explanations, and sentences narrating how the text was drafted, edited, or reviewed.
+Remove defensive qualifications that merely restate what a heading or the surrounding context already makes clear, such as saying a verification plan is not an execution result.
+Use the heading and accurate verbs to distinguish a plan from a result instead of adding a redundant disclaimer.
 Deliver the requested content directly.
 Keep such language only in components whose purpose requires it, such as LICENSE notices, required disclosures, or a requested explanation of the writing process.
 
@@ -99,7 +101,9 @@ Do not substitute a standalone bold paragraph for a heading.
 Reserve bold for emphasis within prose or an item.
 
 Give each paragraph one idea and connect its reasons and consequences.
-Use lists for actual steps or parallel items, keeping hierarchy explicit.
+Write enumerated items as a list or table rather than embedding the enumeration in a prose paragraph.
+Use ordered lists for steps, unordered lists for parallel items, and tables for items compared across shared criteria.
+Keep list hierarchy explicit.
 Use rows for subjects and columns for shared criteria in comparison tables.
 State units and place extended interpretation beside the table.
 In before-and-after editing tables, put each sentence on its own row and leave a cell empty when that version has no corresponding sentence.

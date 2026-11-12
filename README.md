@@ -2,7 +2,8 @@
 
 Use Clear Writing to revise a draft, write documentation, compare options, or turn work notes into a concise update.
 Tell the agent what you need and provide the material it should use.
-The skill removes generic disclaimers, repetition, and writing-process narration, with exceptions for purpose-built text such as LICENSE notices.
+The skill removes generic disclaimers, redundant contextual caveats, repetition, and writing-process narration, with exceptions for purpose-built text such as LICENSE notices.
+It presents enumerated items as lists or comparison tables and preserves limitations that affect the reader's decision.
 
 [Install](#install-from-a-marketplace) · [Use Clear Writing](#use-clear-writing) · [Example requests](#example-requests) · [Local packages](#local-packages) · [Adjust the result](#adjust-the-result)
 
