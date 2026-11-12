@@ -106,7 +106,10 @@ Use ordered lists for steps, unordered lists for parallel items, and tables for 
 Keep list hierarchy explicit.
 Use rows for subjects and columns for shared criteria in comparison tables.
 State units and place extended interpretation beside the table.
-In before-and-after editing tables, put each sentence on its own row and leave a cell empty when that version has no corresponding sentence.
+In before-and-after editing tables, put each corresponding statement or list item on its own row.
+Leave a cell empty when that version has no corresponding item, including continuation rows.
+Table cells may use concise phrases or direct assertions; complete sentences and final periods are optional.
+Keep required notices and exact quoted text unchanged.
 
 ## Write for the rendered result
 
