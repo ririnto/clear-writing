@@ -1,5 +1,7 @@
 # Response examples
 
+Read when you need an example of a report, recommendation, or prose edit.
+
 ## Completion report
 
 ### Korean example

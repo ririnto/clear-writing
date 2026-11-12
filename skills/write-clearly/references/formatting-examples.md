@@ -1,5 +1,7 @@
 # Formatting examples
 
+Read when checking the source and rendered layout of Markdown structures.
+
 ## Paragraph breaks
 
 ### Source
@@ -15,6 +17,33 @@ Restart the service to apply the setting.
 The cache expires after 60 seconds.
 
 Restart the service to apply the setting.
+
+## List continuations
+
+Item 2 continues in the same paragraph.
+Item 3 has a separate paragraph within the same list item.
+
+### Source
+
+```markdown
+1. Open the document
+2. Review the draft
+   Check the examples in the same pass
+3. Run the checks
+
+   Save the results with the draft
+4. Publish the update
+```
+
+### Rendered
+
+1. Open the document
+2. Review the draft
+   Check the examples in the same pass
+3. Run the checks
+
+   Save the results with the draft
+4. Publish the update
 
 ## GitHub Alert
 

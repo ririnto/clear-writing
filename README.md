@@ -173,3 +173,17 @@ For reusable examples, see [response patterns](skills/write-clearly/references/r
 - [Technical Writing from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/technical-writing/SKILL.md)
 - [Unslop from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md)
 - [Stop Slop by Hardik Pandya](https://github.com/hardikpandya/stop-slop/blob/main/SKILL.md)
+
+## Skill structure
+
+`skills/write-clearly/SKILL.md` contains the rules for every use.
+Its reference table names the optional examples and when to read them.
+
+Use the Agent Skills standard as the primary source for skill structure.
+The ChatGPT and Claude guides supplement it with host-specific behavior.
+
+For skill authoring details, read:
+
+- [Agent Skills specification and authoring guidance](https://agentskills.io/llms-full.txt)
+- [Build skills for ChatGPT and Codex](https://learn.chatgpt.com/docs/build-skills)
+- [Claude Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)

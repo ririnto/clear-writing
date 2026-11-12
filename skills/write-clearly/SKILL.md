@@ -20,10 +20,16 @@ Apply the user's requested purpose, language, length, tone, and format.
 For a short answer, use the sentence or phrase that resolves the request.
 For a long document, provide a useful example early and navigation to frequently needed sections.
 
-Examples:
+## Load supporting examples when needed
 
-- [Responses](references/response-patterns.md)
-- [Formatting](references/formatting-examples.md)
+Apply the instructions in this file whenever you use the skill.
+The references provide optional examples, not additional required rules.
+Read only the reference that helps with the current task.
+
+| Reference | Read when |
+| --- | --- |
+| [Response examples](references/response-patterns.md) | You need a model for a completion report, evidence-based recommendation, or before-and-after edit |
+| [Formatting examples](references/formatting-examples.md) | You need source and rendered examples to check paragraph breaks, list continuations, Alerts, Mermaid, or LaTeX |
 
 ## Match the document to the task
 
@@ -152,7 +158,10 @@ Write one prose sentence per source line when editing Markdown files.
 Separate intended paragraphs with one blank line, equivalent to two newline characters.
 A single source newline can remain inside the same rendered paragraph.
 
-Place blank lines around headings, lists, tables, and fenced blocks.
+Place blank lines around headings, tables, fenced blocks, and the outer boundaries of lists.
+Within a list item, put a continuation of the same paragraph on the next line, indented to the item content.
+Insert a blank line before an indented continuation only when it starts a separate paragraph within that item.
+Do not insert blank lines between list items or their continuation lines by default.
 Use normal word spacing and consistent indentation.
 Retain valid table rows and code syntax.
 
