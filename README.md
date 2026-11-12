@@ -166,9 +166,9 @@ Give a direct follow-up instruction to refine the same draft:
 - Make the README focus on installation and everyday use.
 
 Name the target audience, language, and length whenever they affect the result.
-Read the [skill](skills/write-clearly/SKILL.md) for the complete rules and examples.
+Read the [skill](skills/write-clearly/SKILL.md) for the core rules and links to task-specific examples.
 
 ## Skill structure
 
-`skills/write-clearly/SKILL.md` contains all instructions and examples.
-No other writing skill or reference document is required.
+`skills/write-clearly/SKILL.md` contains the core rules and states when to read each optional file under `references/`.
+The package works without another writing skill or external reading.
