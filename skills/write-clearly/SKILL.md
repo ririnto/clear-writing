@@ -14,13 +14,31 @@ Apply the user's requested purpose, language, length, tone, and format.
 2. Lead with the answer, recommendation, finding, or completed result.
    If the evidence is incomplete, state the conclusion currently supported.
 3. Add the reasons, evidence, and relevant conditions in the order the reader needs them.
-4. Choose paragraphs, headings, lists, tables, Alerts, graphs, and equations according to their function.
+4. Choose the structure using the guidance below.
 5. Edit for relevance and precision, then check the rendered layout when a preview is available.
 
 For a short answer, use the sentence or phrase that resolves the request.
 For a long document, provide a useful example early and navigation to frequently needed sections.
 
-Optional examples: [responses](references/response-patterns.md) and [formatting](references/formatting-examples.md).
+Examples:
+
+- [Responses](references/response-patterns.md)
+- [Formatting](references/formatting-examples.md)
+
+## Match the document to the task
+
+| Reader's task | Document | Include |
+| --- | --- | --- |
+| Learn by doing | Tutorial | A concrete result and steps with visible checkpoints |
+| Complete a task | How-to | Actions, prerequisites, and relevant branches |
+| Look up a detail | Reference | Names, values, limits, and errors |
+| Understand a decision | Explanation | Reasons, alternatives, and trade-offs |
+
+Keep each section focused on its task.
+Separate background from procedures and link to it when needed.
+Use the actual names of commands, files, settings, and symbols.
+Put a condition before the action it governs.
+Use one term for each concept and make pronouns point to a clear subject.
 
 ## Keep the current request central
 
@@ -66,6 +84,21 @@ Introduce a technical term when it improves precision and explain unfamiliar mea
 Use no em dash character (`U+2014`) in authored prose.
 Use a period, comma, colon, or parentheses according to the relationship.
 
+## Remove formulaic prose
+
+- Replace vague praise or significance claims with the specific behavior or consequence.
+- Name a source instead of attributing a claim to unnamed experts.
+- Remove repeated introductions, forced contrasts, and conclusions that add no information.
+- Describe what a system does without assigning it human intentions.
+- Prefer active voice when the actor matters; keep passive wording when the actor is unknown or irrelevant.
+- Vary sentence length with the thought rather than forcing a fixed rhythm or number of points.
+- Remove decorative modifiers and dramatic fragments, while preserving modifiers that change factual scope.
+
+Use concise phrases or direct assertions where their meaning is clear.
+Do not force complete sentences or final periods into table cells and parallel labels.
+Keep enough grammatical structure to avoid ambiguity.
+Apply these rules to this plugin's own documentation as well as requested drafts.
+
 ## Make evidence and status traceable
 
 Distinguish facts, interpretations, proposals, and assumptions in context.
@@ -106,7 +139,8 @@ Use ordered lists for steps, unordered lists for parallel items, and tables for 
 Keep list hierarchy explicit.
 Use rows for subjects and columns for shared criteria in comparison tables.
 State units and place extended interpretation beside the table.
-In before-and-after editing tables, put each corresponding statement or list item on its own row.
+In before-and-after editing tables, align each source passage with its revision.
+When one source passage becomes several revised statements or list items, put the full source in the first row and leave the source cell empty in the following rows.
 Leave a cell empty when that version has no corresponding item, including continuation rows.
 Table cells may use concise phrases or direct assertions; complete sentences and final periods are optional.
 Keep required notices and exact quoted text unchanged.
@@ -123,7 +157,15 @@ Retain valid table rows and code syntax.
 
 For GitHub Alerts, put an empty quoted line containing only `>` immediately after the marker.
 Put another empty quoted line between body paragraphs.
-Use NOTE for supporting information, TIP for practical advice, IMPORTANT for an essential condition, WARNING for an immediate problem, and CAUTION for risk or potential loss.
+
+| Alert | Use |
+| --- | --- |
+| NOTE | Supporting information |
+| TIP | Practical advice |
+| IMPORTANT | Essential condition |
+| WARNING | Immediate problem |
+| CAUTION | Risk or potential loss |
+
 Place Alerts at the top level near the content they qualify and use them selectively.
 
 Use fenced `mermaid` blocks for graphs and diagrams.

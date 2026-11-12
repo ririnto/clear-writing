@@ -5,7 +5,11 @@ Tell the agent what you need and provide the material it should use.
 The skill removes generic disclaimers, redundant contextual caveats, repetition, and writing-process narration, with exceptions for purpose-built text such as LICENSE notices.
 It presents enumerated items as lists or comparison tables and preserves limitations that affect the reader's decision.
 
-[Install](#install-from-a-marketplace) · [Use Clear Writing](#use-clear-writing) · [Example requests](#example-requests) · [Local packages](#local-packages) · [Adjust the result](#adjust-the-result)
+- [Install](#install-from-a-marketplace)
+- [Use Clear Writing](#use-clear-writing)
+- [Example requests](#example-requests)
+- [Local packages](#local-packages)
+- [Adjust the result](#adjust-the-result)
 
 ## Install from a marketplace
 
@@ -77,7 +81,7 @@ Return the revised text in English.
 >
 > Include the intended reader and output format when they matter.
 >
-> For example: “Write a Korean update for the team, under 150 words.”
+> For example: "Write a Korean update for the team, under 150 words."
 
 ## Example requests
 
@@ -156,10 +160,16 @@ Replace `/absolute/path/to/clear-writing` below with the checkout's absolute pat
 
 Give a direct follow-up instruction to refine the same draft:
 
-- “Shorten this to three paragraphs.”
-- “Keep the technical detail and make it easier to scan.”
-- “Put the alternatives in a table.”
-- “Make the README focus on installation and everyday use.”
+- "Shorten this to three paragraphs."
+- "Keep the technical detail and make it easier to scan."
+- "Put the alternatives in a table."
+- "Make the README focus on installation and everyday use."
 
 Name the target audience, language, and length whenever they affect the result.
 For reusable examples, see [response patterns](skills/write-clearly/references/response-patterns.md) and [formatting examples](skills/write-clearly/references/formatting-examples.md).
+
+## Writing guidance
+
+- [Technical Writing from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/technical-writing/SKILL.md)
+- [Unslop from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md)
+- [Stop Slop by Hardik Pandya](https://github.com/hardikpandya/stop-slop/blob/main/SKILL.md)

@@ -1,4 +1,4 @@
-# Formatting Examples
+# Formatting examples
 
 ## Paragraph breaks
 
@@ -42,13 +42,13 @@ In this graph, an arrow points from a prerequisite to the task that requires it.
 
 ```mermaid
 flowchart TD
-    accTitle: Dependencies in publishing a release
-    accDescr: A release build needs passing tests and updated documentation. Publishing needs the release build.
-    A["Prepare changes"] --> B["Run tests"]
-    A --> C["Update documentation"]
-    B --> D["Build release"]
-    C --> D
-    D --> E["Publish release"]
+	accTitle: Dependencies in publishing a release
+	accDescr: A release build needs passing tests and updated documentation. Publishing needs the release build.
+	A["Prepare changes"] --> B["Run tests"]
+	A --> C["Update documentation"]
+	B --> D["Build release"]
+	C --> D
+	D --> E["Publish release"]
 ```
 
 Tests and documentation can run in parallel after the changes are ready.

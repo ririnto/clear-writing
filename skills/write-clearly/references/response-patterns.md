@@ -1,4 +1,4 @@
-# Response Examples
+# Response examples
 
 ## Completion report
 
@@ -51,8 +51,8 @@ Measure both again under matching conditions if the input or concurrency changes
 
 | Draft | Revision |
 | --- | --- |
-| It is important to note that the cache expires after 60 seconds. | Cache TTL: 60 seconds |
-| That means it lasts one minute. | |
+| It is important to note that the cache expires after 60 seconds and refreshes on the next request. | Cache TTL: 60 seconds |
+| | Refresh: next request |
 | This is for informational purposes only. | |
 | I shortened the sentences and reviewed the wording. | |
 | The following verification scope describes what to check after changes, not execution results. | |
