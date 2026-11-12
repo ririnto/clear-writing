@@ -81,7 +81,7 @@ Return the revised text in English.
 >
 > Include the intended reader and output format when they matter.
 >
-> For example: "Write a Korean update for the team, under 150 words."
+> For example: Write a Korean update for the team, under 150 words.
 
 ## Example requests
 
@@ -160,30 +160,15 @@ Replace `/absolute/path/to/clear-writing` below with the checkout's absolute pat
 
 Give a direct follow-up instruction to refine the same draft:
 
-- "Shorten this to three paragraphs."
-- "Keep the technical detail and make it easier to scan."
-- "Put the alternatives in a table."
-- "Make the README focus on installation and everyday use."
+- Shorten this to three paragraphs.
+- Keep the technical detail and make it easier to scan.
+- Put the alternatives in a table.
+- Make the README focus on installation and everyday use.
 
 Name the target audience, language, and length whenever they affect the result.
-For reusable examples, see [response patterns](skills/write-clearly/references/response-patterns.md) and [formatting examples](skills/write-clearly/references/formatting-examples.md).
-
-## Writing guidance
-
-- [Technical Writing from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/technical-writing/SKILL.md)
-- [Unslop from pstack](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md)
-- [Stop Slop by Hardik Pandya](https://github.com/hardikpandya/stop-slop/blob/main/SKILL.md)
+Read the [skill](skills/write-clearly/SKILL.md) for the complete rules and examples.
 
 ## Skill structure
 
-`skills/write-clearly/SKILL.md` contains the rules for every use.
-Its reference table names the optional examples and when to read them.
-
-Use the Agent Skills standard as the primary source for skill structure.
-The ChatGPT and Claude guides supplement it with host-specific behavior.
-
-For skill authoring details, read:
-
-- [Agent Skills specification and authoring guidance](https://agentskills.io/llms-full.txt)
-- [Build skills for ChatGPT and Codex](https://learn.chatgpt.com/docs/build-skills)
-- [Claude Agent Skills overview](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+`skills/write-clearly/SKILL.md` contains all instructions and examples.
+No other writing skill or reference document is required.

@@ -20,32 +20,6 @@ Apply the user's requested purpose, language, length, tone, and format.
 For a short answer, use the sentence or phrase that resolves the request.
 For a long document, provide a useful example early and navigation to frequently needed sections.
 
-## Load supporting examples when needed
-
-Apply the instructions in this file whenever you use the skill.
-The references provide optional examples, not additional required rules.
-Read only the reference that helps with the current task.
-
-| Reference | Read when |
-| --- | --- |
-| [Response examples](references/response-patterns.md) | You need a model for a completion report, evidence-based recommendation, or before-and-after edit |
-| [Formatting examples](references/formatting-examples.md) | You need source and rendered examples to check paragraph breaks, list continuations, Alerts, Mermaid, or LaTeX |
-
-## Match the document to the task
-
-| Reader's task | Document | Include |
-| --- | --- | --- |
-| Learn by doing | Tutorial | A concrete result and steps with visible checkpoints |
-| Complete a task | How-to | Actions, prerequisites, and relevant branches |
-| Look up a detail | Reference | Names, values, limits, and errors |
-| Understand a decision | Explanation | Reasons, alternatives, and trade-offs |
-
-Keep each section focused on its task.
-Separate background from procedures and link to it when needed.
-Use the actual names of commands, files, settings, and symbols.
-Put a condition before the action it governs.
-Use one term for each concept and make pronouns point to a clear subject.
-
 ## Keep the current request central
 
 > [!IMPORTANT]
@@ -81,7 +55,8 @@ Remove opening phrases that merely announce the answer, vague praise, empty emph
 Let sentence length and the number of list items follow the information.
 Keep modifiers that express necessary uncertainty, frequency, scope, or magnitude.
 
-Use complete sentences for explanations and relationships that need an explicit subject or causal connection.
+Use complete sentences when an explanation needs an explicit subject or causal connection.
+Use concise phrases or direct assertions when their meaning is clear.
 Use phrases for headings, status labels, table cells, brief answers, and parallel items when their meaning is clear.
 Match grammar and level of detail within each list and table column.
 
@@ -89,21 +64,8 @@ Use familiar, concrete language.
 Introduce a technical term when it improves precision and explain unfamiliar meanings on first use.
 Use no em dash character (`U+2014`) in authored prose.
 Use a period, comma, colon, or parentheses according to the relationship.
-
-## Remove formulaic prose
-
-- Replace vague praise or significance claims with the specific behavior or consequence.
-- Name a source instead of attributing a claim to unnamed experts.
-- Remove repeated introductions, forced contrasts, and conclusions that add no information.
-- Describe what a system does without assigning it human intentions.
-- Prefer active voice when the actor matters; keep passive wording when the actor is unknown or irrelevant.
-- Vary sentence length with the thought rather than forcing a fixed rhythm or number of points.
-- Remove decorative modifiers and dramatic fragments, while preserving modifiers that change factual scope.
-
-Use concise phrases or direct assertions where their meaning is clear.
-Do not force complete sentences or final periods into table cells and parallel labels.
-Keep enough grammatical structure to avoid ambiguity.
-Apply these rules to this plugin's own documentation as well as requested drafts.
+Omit quotation marks around ordinary labels and example requests when formatting already distinguishes them.
+Preserve quotation marks required by code syntax, exact quotations, or legal text.
 
 ## Make evidence and status traceable
 
@@ -212,3 +174,163 @@ Keep text readable on narrow screens and split dense tables or diagrams by meani
 
 Keep the review internal unless it is the requested deliverable.
 End when the necessary result, evidence, and conditions have been communicated.
+
+## Response examples
+
+### Completion report
+
+#### Korean example
+
+> 구간 끝에서 멈추던 반복 재생을 수정했습니다.
+> 종료 지점에 도달하면 시작 위치로 이동해 재생을 이어갑니다.
+>
+> - 일반 재생: 정상 동작 확인
+> - 구간 반복: 종료 지점에서 재시작 확인
+>
+> 배속 변경과 함께 사용할 때의 동작은 추가 확인이 필요합니다.
+
+#### English example
+
+> Fixed playback stopping at the end of a looped segment.
+> Playback now returns to the start and continues.
+>
+> - Normal playback: verified
+> - Segment looping: restart at the end verified
+>
+> Playback speed changes combined with looping still need verification.
+
+### Recommendation supported by a comparison
+
+Example inputs: the same hardware and input with 16 concurrent requests.
+
+Recommend Option B under these conditions.
+It satisfies both limits:
+
+$$
+L_{95}\le 70\,\mathrm{ms}
+\quad\land\quad
+M\le 256\,\mathrm{MiB}
+$$
+
+$L_{95}$ is the 95th percentile of request latency.
+$M$ is peak memory use.
+
+| Option | p95 (ms) | Peak memory (MiB) |
+| --- | ---: | ---: |
+| A | 84 | 96 |
+| B | 57 | 180 |
+
+Option A exceeds the latency limit.
+Option B meets both limits.
+Measure both again under matching conditions if the input or concurrency changes.
+
+### Edit without changing scope
+
+| Draft | Revision |
+| --- | --- |
+| It is important to note that the cache expires after 60 seconds and refreshes on the next request. | Cache TTL: 60 seconds |
+| | Refresh: next request |
+| This is for informational purposes only. | Delete |
+| I shortened the sentences and reviewed the wording. | Delete |
+| The following verification scope describes what to check after changes, not execution results. | Delete |
+| Some requests may fail during a restart. | Some requests may fail during a restart |
+| LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. |
+| This is a major improvement in how errors are handled: the parser now reports the input offset. | Parser errors include the input offset |
+| Verify normal playback and segment looping. | - Verify normal playback |
+| | - Verify segment looping |
+
+## Formatting examples
+
+### Paragraph breaks
+
+#### Source
+
+```markdown
+The cache expires after 60 seconds.
+
+Restart the service to apply the setting.
+```
+
+#### Rendered
+
+The cache expires after 60 seconds.
+
+Restart the service to apply the setting.
+
+### List continuations
+
+Item 2 continues in the same paragraph.
+Item 3 has a separate paragraph within the same list item.
+
+#### Source
+
+```markdown
+1. Open the document
+2. Review the draft
+   Check the examples in the same pass
+3. Run the checks
+
+   Save the results with the draft
+4. Publish the update
+```
+
+#### Rendered
+
+1. Open the document
+2. Review the draft
+   Check the examples in the same pass
+3. Run the checks
+
+   Save the results with the draft
+4. Publish the update
+
+### GitHub Alert
+
+#### Source
+
+```markdown
+> [!IMPORTANT]
+>
+> Use the same input and concurrency.
+>
+> Measure again if either changes.
+```
+
+#### Rendered
+
+> [!IMPORTANT]
+>
+> Use the same input and concurrency.
+>
+> Measure again if either changes.
+
+### Dependency graph
+
+In this graph, an arrow points from a prerequisite to the task that requires it.
+
+```mermaid
+flowchart TD
+	accTitle: Dependencies in publishing a release
+	accDescr: A release build needs passing tests and updated documentation. Publishing needs the release build.
+	A["Prepare changes"] --> B["Run tests"]
+	A --> C["Update documentation"]
+	B --> D["Build release"]
+	C --> D
+	D --> E["Publish release"]
+```
+
+Tests and documentation can run in parallel after the changes are ready.
+The release build requires both results.
+
+### LaTeX notation
+
+These examples use `$...$` for inline math and `$$...$$` for display math.
+
+| Relationship | Expression | Define |
+| --- | --- | --- |
+| Equality | $a=b$ | Quantities and conditions |
+| Approximation | $a\approx b$ | Tolerance or basis |
+| Comparison | $a<b$ | Units and comparison conditions |
+| Inclusion | $A\subseteq B$ | Membership of each set |
+| Implication | $P\Rightarrow Q$ | Assumptions under which it holds |
+| Priority | $A\succ B$ | Meaning of the ordering |
