@@ -125,9 +125,9 @@ Do not insert blank lines between list items or their continuation lines by defa
 Use normal word spacing and consistent indentation.
 Retain valid table rows and code syntax.
 
-Check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the available preview.
+When required, check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the rendered output using a supported method.
 Check section links in longer documents.
-Run applicable Markdown checks without changing unrelated files.
+Run Markdown formatting checks according to repository instructions without changing unrelated files.
 Keep text readable on narrow screens and split dense tables or diagrams by meaning when needed.
 
 ## YAML source
@@ -141,7 +141,7 @@ Preserve parsed values and literal or folded semantics, including frontmatter an
 1. Check that the opening answers the request and every remaining paragraph serves it.
 2. Check that claims, evidence, assumptions, units, and completion status agree.
 3. Remove generic disclaimers, repetition, writing-process narration, empty announcements, and em dashes, subject to the purpose-based exceptions above.
-4. Check semantic headings, ol and ul, Alert spacing, Mermaid, LaTeX, and the rendered layout.
+4. Check semantic headings, ol and ul, Alert spacing, Mermaid, and LaTeX.
 
 Keep the review internal unless it is the requested deliverable.
 End when the necessary result, evidence, and conditions have been communicated.
