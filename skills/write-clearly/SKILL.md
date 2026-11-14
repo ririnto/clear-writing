@@ -29,6 +29,8 @@ Retain concrete risks, limitations, uncertainty, and unperformed checks that aff
 
 ## Preserve meaning while editing
 
+When changing a rule, revise or remove it at its existing source rather than adding an opposite rule.
+
 Keep factual scope, uncertainty, conditions, exceptions, responsibility, and the strength of requirements intact.
 Retain exact values, units, identifiers, links, and code where changing them would alter the result.
 Shorter wording must not strengthen a claim.
@@ -45,6 +47,7 @@ Use no em dash character (`U+2014`) in authored prose.
 Use a period, comma, colon, or parentheses according to the relationship.
 Omit quotation marks around ordinary labels and example requests when formatting already distinguishes them.
 Preserve quotation marks required by code syntax, exact quotations, or legal text.
+Preserve proper names, acronyms, and code identifiers when changing heading capitalization.
 
 ## Edit without changing scope
 
@@ -111,6 +114,7 @@ Keep required notices and exact quoted text unchanged.
 ## Write for the rendered result
 
 Write one prose sentence per source line when editing Markdown files.
+Do not join separate sentences with semicolons or reflow them to a fixed column width.
 Separate intended paragraphs with one blank line, equivalent to two newline characters.
 A single source newline can remain inside the same rendered paragraph.
 
@@ -123,7 +127,14 @@ Retain valid table rows and code syntax.
 
 Check paragraph separation, Alert spacing, heading hierarchy, list indentation, table width, graph labels, and math in the available preview.
 Check section links in longer documents.
+Run applicable Markdown checks without changing unrelated files.
 Keep text readable on narrow screens and split dense tables or diagrams by meaning when needed.
+
+## YAML source
+
+Use block lists for YAML sequences except an explicit empty sequence.
+Use `|-` for literal multiline strings and `>-` for a wrapped logical line when omitting the final line feed preserves the required value.
+Preserve parsed values and literal or folded semantics, including frontmatter and template strings.
 
 ## Finish with a focused review
 
@@ -140,5 +151,6 @@ End when the necessary result, evidence, and conditions have been communicated.
 The rules above apply without loading additional files.
 Read only the reference needed for the current task:
 
+- [Agent instructions](references/agent-instructions.md): when drafting or changing prompts, skills, or other agent-facing instructions.
 - [Response examples](references/response-patterns.md): when drafting a completion report or recommendation.
 - [Formatting details and examples](references/formatting-examples.md): when using GitHub Alerts, Mermaid, or LaTeX, or when paragraph and list continuation rendering needs an example.
