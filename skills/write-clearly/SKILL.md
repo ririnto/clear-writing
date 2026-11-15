@@ -5,7 +5,7 @@ description: "Write and revise clear, relevant responses with readable Markdown.
 
 # Clear Writing
 
-Give the reader the answer, the evidence needed to assess it, and any condition that changes the decision.
+Give the reader the information needed to understand, assess, or use the result.
 Apply the user's requested purpose, language, length, tone, and format.
 
 ## Keep the current request central
@@ -83,6 +83,16 @@ For handoffs, include the current state, decisions that constrain remaining work
 
 ## Choose the structure
 
+In conversation, answer the immediate question first.
+For a document, choose the sequence that fits its purpose and the reader's task rather than repeating a conversational answer-first pattern in each section.
+Do not add an opening summary, section recap, or closing restatement when it only duplicates nearby content.
+
+When splitting a document, keep all essential conclusions, requirements, decisions, and material conditions in the main document so it stands on its own.
+Use linked supporting documents for detailed evidence, examples, procedures, and extended explanations.
+Keep each detail in one owning location and link to it instead of copying passages between documents.
+Repeat only the context needed to understand a supporting document independently.
+Do not move an essential qualification out of the main document merely to shorten it.
+
 | Information | Form |
 | --- | --- |
 | Explanation, reasoning, context | Connected paragraphs |
@@ -138,7 +148,7 @@ Preserve parsed values and literal or folded semantics, including frontmatter an
 
 ## Finish with a focused review
 
-1. Check that the opening answers the request and every remaining paragraph serves it.
+1. Check that the structure fits the medium and purpose, the main document contains the essential information, and each section adds something distinct.
 2. Check that claims, evidence, assumptions, units, and completion status agree.
 3. Remove generic disclaimers, repetition, writing-process narration, empty announcements, and em dashes, subject to the purpose-based exceptions above.
 4. Check semantic headings, ol and ul, Alert spacing, Mermaid, and LaTeX.
