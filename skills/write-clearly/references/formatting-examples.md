@@ -129,3 +129,39 @@ These examples use `$...$` for inline math and `$$...$$` for display math.
 | Inclusion | $A\subseteq B$ | Membership of each set |
 | Implication | $P\Rightarrow Q$ | Assumptions under which it holds |
 | Priority | $A\succ B$ | Meaning of the ordering |
+
+## Edit without changing scope
+
+| Draft | Revision |
+| --- | --- |
+| It is important to note that the cache expires after 60 seconds and refreshes on the next request. | Cache TTL: 60 seconds |
+| | Refresh: next request |
+| This is for informational purposes only. | Delete |
+| I shortened the sentences and reviewed the wording. | Delete |
+| The following verification scope describes what to check after changes, not execution results. | Delete |
+| Some requests may fail during a restart. | Some requests may fail during a restart |
+| LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. | LICENSE notice: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND. |
+| This is a major improvement in how errors are handled: the parser now reports the input offset. | Parser errors include the input offset |
+| Verify normal playback and segment looping. | - Verify normal playback |
+| | - Verify segment looping |
+
+## Before-and-after tables
+
+In before-and-after tables, align each source passage with its revision.
+When one source passage becomes several revised statements or list items, put the full source in the first row and leave later source cells empty.
+Use an empty source cell for a continuation row.
+Write `Delete` in the revision cell when removing source text.
+Table cells may use concise phrases or assertions; complete sentences and final periods are optional.
+Keep required notices and exact quoted text unchanged.
+
+## YAML source
+
+Use block lists for YAML sequences except explicit empty sequences.
+Use `|-` for literal multiline strings and `>-` for a wrapped logical line when omitting the final line feed preserves the value.
+Preserve parsed values and literal or folded semantics, including frontmatter and template strings.
+
+## List spacing
+
+Within a list item, put a continuation of the same paragraph on the next line, indented to the item content.
+Insert a blank line before an indented continuation only when it starts a separate paragraph in that item.
+By default, do not insert blank lines between list items or continuation lines.
