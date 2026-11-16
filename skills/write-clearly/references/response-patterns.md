@@ -1,5 +1,7 @@
 # Response examples
 
+These short updates illustrate conversational replies, not a mandatory structure for documents or their sections.
+
 ## Completion report
 
 ### Korean example
@@ -43,6 +45,4 @@ $M$ is peak memory use.
 | A | 84 | 96 |
 | B | 57 | 180 |
 
-Option A exceeds the latency limit.
-Option B meets both limits.
 Measure both again under matching conditions if the input or concurrency changes.
