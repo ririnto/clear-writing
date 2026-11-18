@@ -1,4 +1,4 @@
-# Response examples
+# Response patterns
 
 ## Report a playback fix
 
