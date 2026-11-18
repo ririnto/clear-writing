@@ -60,9 +60,9 @@ Start a new session after installation.
 
 ### ChatGPT
 
-1. If Clear Writing is available to your account, open [Clear Writing in ChatGPT](https://chatgpt.com/plugins/plugins_6ae33d6bae648191912be7759cde15cc) or find it in **Plugins**, then select the plus button to install it.
+1. If the plugin is available to your account, open [Clear Writing for ChatGPT](https://chatgpt.com/plugins/plugins_6ae33d6bae648191912be7759cde15cc) or find it in **Plugins**, then select the plus button to install it.
 2. Start a new chat.
-3. Type `@` and select **Clear Writing** or its **clear-writing** skill.
+3. Type `@` and select **Clear Writing for ChatGPT** or its **clear-writing** skill.
 
 ## Use Clear Writing
 
@@ -150,7 +150,7 @@ Replace `/absolute/path/to/clear-writing` below with the checkout's absolute pat
 - **Copilot CLI:** Run `copilot plugin install /absolute/path/to/clear-writing`, start a new `copilot` session, then invoke `/clear-writing`.
 - **Codex CLI:** Run `codex plugin marketplace add /absolute/path/to/clear-writing`, then `codex plugin add clear-writing@clear-writing`.
   Start a new `codex` session and invoke `$clear-writing`.
-- **Cursor:** Copy the package contents to `~/.cursor/plugins/local/clear-writing/`, with `plugin.json` directly inside that directory.
+- **Cursor:** Copy `.cursor-plugin/` and `skills/` into `~/.cursor/plugins/local/clear-writing/`.
   Run **Developer: Reload Window**, then type `/` in Agent chat and select **clear-writing**.
   Managed workspaces must allow local plugin imports.
 
