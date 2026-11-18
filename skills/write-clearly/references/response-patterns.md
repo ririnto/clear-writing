@@ -1,35 +1,32 @@
 # Response examples
 
-These short updates illustrate conversational replies, not a mandatory structure for documents or their sections.
+## Report a playback fix
 
-## Completion report
+The engineering notes say that a fix for segment looping passed a staging check at normal playback speed.
+The production rollout is scheduled for Friday.
+The release team needs the verification result and rollout status.
 
-### Korean example
+> The loop fix passed staging at normal playback speed.
+> Production rollout is scheduled for Friday.
 
-> 구간 끝에서 멈추던 반복 재생을 수정했습니다.
-> 종료 지점에 도달하면 시작 위치로 이동해 재생을 이어갑니다.
->
-> - 일반 재생: 정상 동작 확인
-> - 구간 반복: 종료 지점에서 재시작 확인
->
-> 배속 변경과 함께 사용할 때의 동작은 추가 확인이 필요합니다.
+A customer who reported the bug needs to know when the fix will reach them.
 
-### English example
+### Korean
 
-> Fixed playback stopping at the end of a looped segment.
-> Playback now returns to the start and continues.
->
-> - Normal playback: verified
-> - Segment looping: restart at the end verified
->
-> Playback speed changes combined with looping still need verification.
+> 구간 반복 재생이 끝 지점에서 멈추는 문제를 수정해 금요일에 배포할 예정입니다.
+> 테스트 환경에서는 기본 재생 속도로 구간 끝에 도달했을 때 시작 지점으로 돌아가 재생이 이어지는 것을 확인했습니다.
+
+### English
+
+> We plan to release a fix on Friday for playback stopping at the end of a loop.
+> In testing at normal speed, playback returned to the start of the loop and continued.
 
 ## Recommendation supported by a comparison
 
-Example inputs: the same hardware and input with 16 concurrent requests.
+The team tested both options on the same hardware and input with 16 concurrent requests.
 
-Recommend Option B under these conditions.
-It satisfies both limits:
+Choose Option B for this workload.
+It meets both limits.
 
 $$
 L_{95}\le 70\,\mathrm{ms}

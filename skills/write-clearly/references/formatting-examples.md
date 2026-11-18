@@ -1,5 +1,16 @@
 # Formatting details and examples
 
+- [Alerts](#alerts)
+- [Diagrams](#diagrams)
+- [Math](#math)
+- [Examples](#examples)
+- [Edit without changing scope](#edit-without-changing-scope)
+- [Before-and-after tables](#before-and-after-tables)
+- [YAML source](#yaml-source)
+- [List spacing](#list-spacing)
+
+## Alerts
+
 For GitHub Alerts, put an empty quoted line containing only `>` immediately after the marker.
 Put another empty quoted line between body paragraphs.
 
@@ -12,6 +23,8 @@ Put another empty quoted line between body paragraphs.
 | CAUTION | Risk or potential loss |
 
 Place Alerts at the top level near the content they qualify and use them selectively.
+
+## Diagrams
 
 Use fenced `mermaid` blocks for graphs and diagrams.
 Choose a diagram type that matches dependencies, sequence, state transitions, or data flow.
@@ -26,6 +39,8 @@ Quote labels containing Korean text, punctuation, or parentheses.
 Keep detailed conditions and the main interpretation outside the diagram.
 Provide `accTitle` and `accDescr` where supported.
 Use weights, priorities, or cycles only when the underlying relationship supports them.
+
+## Math
 
 Use LaTeX for relationships expressed as equations or symbols outside graphs.
 Define variables, units, assumptions, and symbol meanings near the expression.
@@ -149,9 +164,8 @@ These examples use `$...$` for inline math and `$$...$$` for display math.
 
 In before-and-after tables, align each source passage with its revision.
 When one source passage becomes several revised statements or list items, put the full source in the first row and leave later source cells empty.
-Use an empty source cell for a continuation row.
 Write `Delete` in the revision cell when removing source text.
-Table cells may use concise phrases or assertions; complete sentences and final periods are optional.
+Use a phrase or a sentence in a table cell according to what the reader needs.
 Keep required notices and exact quoted text unchanged.
 
 ## YAML source

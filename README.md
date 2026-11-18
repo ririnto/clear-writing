@@ -1,9 +1,8 @@
 # Clear Writing
 
-Use Clear Writing to revise a draft, write documentation, compare options, or turn work notes into a concise update.
-Tell the agent what you need and provide the material it should use.
-The skill removes generic disclaimers, redundant contextual caveats, repetition, and writing-process narration, with exceptions for purpose-built text such as LICENSE notices.
-It presents enumerated items as lists or comparison tables and preserves limitations that affect the reader's decision.
+Use Clear Writing to edit a draft, document a project, compare options, or report completed work.
+For a narrow edit, name what to change, such as spelling or punctuation.
+For a new draft, say who will read it and what they need to know or decide.
 
 - [Install](#install-from-a-marketplace)
 - [Use Clear Writing](#use-clear-writing)
@@ -81,7 +80,7 @@ Return the revised text in English.
 >
 > Include the intended reader and output format when they matter.
 >
-> For example: Write a Korean update for the team, under 150 words.
+> For example, ask for a two-sentence Korean notice for customers who missed the original announcement.
 
 ## Example requests
 
@@ -102,8 +101,7 @@ Use these project details and commands:
 
 ```text
 Recommend an option using the requirements and measurements below.
-Lead with the recommendation, then show a compact comparison table.
-Express the acceptance conditions in LaTeX and define the symbols.
+Return one table showing the measurements, units, and which options meet the requirements.
 
 <options, measurements, units, measurement conditions, requirements>
 ```
