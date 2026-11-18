@@ -24,7 +24,7 @@ claude plugin marketplace add ririnto/clear-writing
 claude plugin install clear-writing@clear-writing
 ```
 
-Start a new session with `claude`, then use `/clear-writing:write-clearly` in your prompt.
+Start a new session with `claude`, then use `/clear-writing:clear-writing` in your prompt.
 
 ### GitHub Copilot CLI
 
@@ -35,7 +35,7 @@ copilot plugin marketplace add ririnto/clear-writing
 copilot plugin install clear-writing@clear-writing
 ```
 
-Start a new session with `copilot`, then use `/write-clearly` in your prompt.
+Start a new session with `copilot`, then use `/clear-writing` in your prompt.
 
 ### Codex CLI
 
@@ -46,7 +46,7 @@ codex plugin marketplace add ririnto/clear-writing
 codex plugin add clear-writing@clear-writing
 ```
 
-Start a new session with `codex`, then use `$write-clearly` in your prompt.
+Start a new session with `codex`, then use `$clear-writing` in your prompt.
 
 To install through the interactive browser, register the marketplace with the first command, open `/plugins` in Codex, and select Clear Writing from the `clear-writing` marketplace.
 Start a new session after installation.
@@ -56,13 +56,13 @@ Start a new session after installation.
 1. Open **Customize** in Cursor's sidebar.
 2. Select **From GitHub Repository** and enter `https://github.com/ririnto/clear-writing`.
 3. Select **Clear Writing**, choose **Install**, and choose user or project scope.
-4. In Agent chat, type `/` and select **write-clearly**.
+4. In Agent chat, type `/` and select **clear-writing**.
 
 ### ChatGPT
 
 1. If Clear Writing is available to your account, open [Clear Writing in ChatGPT](https://chatgpt.com/plugins/plugins_6ae33d6bae648191912be7759cde15cc) or find it in **Plugins**, then select the plus button to install it.
 2. Start a new chat.
-3. Type `@` and select **Clear Writing** or its **write-clearly** skill.
+3. Type `@` and select **Clear Writing** or its **clear-writing** skill.
 
 ## Use Clear Writing
 
@@ -146,12 +146,12 @@ git clone https://github.com/ririnto/clear-writing.git
 
 Replace `/absolute/path/to/clear-writing` below with the checkout's absolute path.
 
-- **Claude Code:** Run `claude --plugin-dir /absolute/path/to/clear-writing`, then invoke `/clear-writing:write-clearly`.
-- **Copilot CLI:** Run `copilot plugin install /absolute/path/to/clear-writing`, start a new `copilot` session, then invoke `/write-clearly`.
+- **Claude Code:** Run `claude --plugin-dir /absolute/path/to/clear-writing`, then invoke `/clear-writing:clear-writing`.
+- **Copilot CLI:** Run `copilot plugin install /absolute/path/to/clear-writing`, start a new `copilot` session, then invoke `/clear-writing`.
 - **Codex CLI:** Run `codex plugin marketplace add /absolute/path/to/clear-writing`, then `codex plugin add clear-writing@clear-writing`.
-  Start a new `codex` session and invoke `$write-clearly`.
+  Start a new `codex` session and invoke `$clear-writing`.
 - **Cursor:** Copy the package contents to `~/.cursor/plugins/local/clear-writing/`, with `plugin.json` directly inside that directory.
-  Run **Developer: Reload Window**, then type `/` in Agent chat and select **write-clearly**.
+  Run **Developer: Reload Window**, then type `/` in Agent chat and select **clear-writing**.
   Managed workspaces must allow local plugin imports.
 
 ## Adjust the result
@@ -164,9 +164,9 @@ Give a direct follow-up instruction to refine the same draft:
 - Make the README focus on installation and everyday use.
 
 Name the target audience, language, and length whenever they affect the result.
-Read the [skill](skills/write-clearly/SKILL.md) for the core rules and links to task-specific examples.
+Read the [skill](skills/clear-writing/SKILL.md) for the core rules and links to task-specific examples.
 
 ## Skill structure
 
-`skills/write-clearly/SKILL.md` contains the core rules and states when to read each optional file under `references/`.
+`skills/clear-writing/SKILL.md` contains the core rules and states when to read each optional file under `references/`.
 The package works without another writing skill or external reading.

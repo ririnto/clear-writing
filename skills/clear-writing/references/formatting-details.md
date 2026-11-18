@@ -1,4 +1,4 @@
-# Formatting details and examples
+# Formatting details
 
 - [Alerts](#alerts)
 - [Diagrams](#diagrams)

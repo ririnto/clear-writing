@@ -1,5 +1,5 @@
 ---
-name: write-clearly
+name: clear-writing
 description: Draft, revise, or review prose for a specific reader. Use for explanations, documentation, comparisons, progress updates, completion reports, handoffs, and agent instructions.
 ---
 
@@ -74,8 +74,8 @@ When rendering needs verification, inspect the affected element at the intended 
 ## Task-specific guidance
 
 - For prompts, skills, or project instructions, read [Agent instructions](references/agent-instructions.md).
-- For examples of completion reports and evidence-based recommendations, see [Response examples](references/response-patterns.md).
-- For Alert, Mermaid, math, YAML, list continuation, or before-and-after table details, read [Formatting details and examples](references/formatting-examples.md).
+- For examples of completion reports and evidence-based recommendations, see [Response patterns](references/response-patterns.md).
+- For Alert, Mermaid, math, YAML, list continuation, or before-and-after table details, read [Formatting details](references/formatting-details.md).
 
 Before delivery, check the text against the requested output and the source.
 Keep that review internal unless the user asks for it.
