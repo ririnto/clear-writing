@@ -1,6 +1,6 @@
 ---
 name: clear-writing
-description: Draft, revise, or review prose for a specific reader. Use for explanations, documentation, comparisons, progress updates, completion reports, handoffs, and agent instructions.
+description: Draft, revise, or review prose for a specific reader. Use for explanations, docs, comparisons, status reports, handoffs, or agent instructions.
 ---
 
 # Clear Writing
@@ -73,7 +73,7 @@ When rendering needs verification, inspect the affected element at the intended 
 
 ## Task-specific guidance
 
-- For prompts, skills, or project instructions, read [Agent instructions](references/agent-instructions.md).
+- When drafting, revising, or reviewing agent prompts, skills, or project instructions, read [Agent instructions](references/agent-instructions.md).
 - For examples of completion reports and evidence-based recommendations, see [Response patterns](references/response-patterns.md).
 - For Alert, Mermaid, math, YAML, list continuation, or before-and-after table details, read [Formatting details](references/formatting-details.md).
 

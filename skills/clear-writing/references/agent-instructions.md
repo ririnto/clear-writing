@@ -3,6 +3,8 @@
 Describe the result, who will use it, and what the reviewer can observe when it is ready.
 Include project conventions the agent cannot infer from the available code, tests, or documentation.
 State the scope of the task and who can authorize actions that extend it.
+Name any routine checks the agent can run without approval.
+State whether the agent can fix failures caused by the change and rerun the checks.
 Prescribe a procedure when order or the evidence it produces matters.
 Put conditions, exceptions, and stopping points beside the action they govern.
 
@@ -17,7 +19,7 @@ Keep a one-off example or environment detail local to its task.
 Keep shared rules in the main skill and link bundled references with specific read conditions.
 Repeat a requirement only where an independent entry point needs it.
 
-Try a representative request and a case where the rule should stop applying.
+When an instruction changes behavior, try a representative request and a case where the instruction should stop applying.
 Judge the result against the requested behavior.
 Use file and link checks to verify structure.
-Inspect an actual response to assess how the instruction was applied.
+Inspect the task result to assess how the instruction was applied.
