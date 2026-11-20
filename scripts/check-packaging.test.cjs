@@ -70,7 +70,7 @@ const cases = [
   }, 1, /\.codex-plugin\/plugin\.json.*shared skills directory/],
   ["rejects a missing skill", { "skills/clear-writing/SKILL.md": null }, 1, /Expected only skills\/clear-writing/],
   ["rejects a second discoverable skill", {
-    "skills/extra/nested/SKILL.md": "---\nname: extra\ndescription: Another fixture.\n---\n",
+    "skills/extra/nested/SKILL.md": "---\nname: nested\ndescription: Another fixture.\n---\n",
   }, 1, /skills[\\/]extra[\\/]nested[\\/]SKILL\.md/],
   ["rejects missing skill discovery metadata", {
     "skills/clear-writing/SKILL.md": "---\nname: clear-writing\n---\n",
@@ -78,6 +78,9 @@ const cases = [
   ["rejects a blank skill description", {
     "skills/clear-writing/SKILL.md": "---\nname: clear-writing\ndescription: '' # Empty\n---\n",
   }, 1, /expected a non-empty frontmatter description/],
+  ["accepts an indented skill description", {
+    "skills/clear-writing/SKILL.md": "---\nname: clear-writing\ndescription:\n  A fixture.\n---\n",
+  }, 0, /3\.4\.5/],
   ["accepts a folded skill description", {
     "skills/clear-writing/SKILL.md": "---\nname: clear-writing\ndescription: >-\n  A fixture.\n---\n",
   }, 0, /3\.4\.5/],

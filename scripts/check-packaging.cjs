@@ -117,11 +117,13 @@ function checkPackaging(root) {
   );
 
   const descriptions = [...(frontmatter ?? "").matchAll(/^description[ \t]*:[ \t]*(.*)(?:\r?\n((?:[ \t]*\r?\n)*[ \t]+\S[^\r\n]*))?/gm)];
-  const description = descriptions[0]?.[1].trim();
+  const inline = descriptions[0]?.[1].trim();
+  const continuation = descriptions[0]?.[2]?.trim();
+  const description = inline || continuation;
   requireCondition(
     descriptions.length === 1 && description &&
       !/^(?:null|~|''|"")(?:[ \t]+#.*)?$/i.test(description) && !description.startsWith("#") &&
-      (!/^[|>]/.test(description) || descriptions[0][2]),
+      (!/^[|>]/.test(inline) || continuation),
     `${skill}: expected a non-empty frontmatter description.`,
   );
 
