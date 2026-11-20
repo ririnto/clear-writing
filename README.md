@@ -154,6 +154,12 @@ Replace `/absolute/path/to/clear-writing` below with the checkout's absolute pat
   Run **Developer: Reload Window**, then type `/` in Agent chat and select **clear-writing**.
   Managed workspaces must allow local plugin imports.
 
+## Check packaging
+
+Run `node scripts/check-packaging.cjs` from the checkout to verify the native manifests, marketplace entries, and shared skill.
+Run `node --test scripts/check-packaging.test.cjs` to test the check against passing and failing packages.
+Both commands run offline with Node.js 18.13 or later.
+
 ## Adjust the result
 
 Give a direct follow-up instruction to refine the same draft:
