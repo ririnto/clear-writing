@@ -1,0 +1,22 @@
+name: Packaging
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check-packaging:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6.0.3
+        with:
+          persist-credentials: false
+      - name: Check packaging
+        run: node scripts/check-packaging.cjs
+      - name: Run packaging fixtures
+        run: node --test scripts/check-packaging.test.cjs
