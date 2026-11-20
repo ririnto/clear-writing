@@ -4,7 +4,7 @@ const path = require("node:path");
 const name = "clear-writing";
 const skill = "skills/clear-writing/SKILL.md";
 const packages = [
-  [".claude-plugin/marketplace.json", ".claude-plugin/plugin.json"],
+  [".claude-plugin/marketplace.json", ".claude-plugin/plugin.json", "claude"],
   [".agents/plugins/marketplace.json", ".codex-plugin/plugin.json", "codex"],
   [".cursor-plugin/marketplace.json", ".cursor-plugin/plugin.json"],
 ];
@@ -25,11 +25,29 @@ function isLocalPath(value) {
   return typeof value === "string" && value.startsWith("./") && !value.split("/").includes("..");
 }
 
+function findSkills(directory) {
+  return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory() && !entry.name.startsWith(".")) return findSkills(file);
+    return entry.name === "SKILL.md" && entry.isFile() ? [file] : [];
+  });
+}
+
 function checkPackaging(root) {
-  requireCondition(
-    !fs.lstatSync(path.join(root, "plugin.json"), { throwIfNoEntry: false }),
-    "Remove the root plugin.json.",
-  );
+  const shadowingPaths = [
+    "plugin.json",
+    "marketplace.json",
+    ".plugin/plugin.json",
+    ".plugin/marketplace.json",
+    ".github/plugin/plugin.json",
+    ".github/plugin/marketplace.json",
+  ];
+  for (const file of shadowingPaths) {
+    requireCondition(
+      !fs.lstatSync(path.join(root, file), { throwIfNoEntry: false }),
+      `Remove ${file}. It can take precedence over the native package.`,
+    );
+  }
 
   const versions = packages.map(([marketplaceFile, manifestFile, format]) => {
     const marketplace = readJson(path.join(root, marketplaceFile));
@@ -41,13 +59,16 @@ function checkPackaging(root) {
     const [entry] = entries;
     const codex = format === "codex";
     const source = codex ? entry.source?.path : entry.source;
+    const prefix = codex ? "." : marketplace.metadata?.pluginRoot ?? ".";
     requireCondition(
       isLocalPath(source) && (!codex || entry.source?.source === "local") &&
-        path.resolve(root, source) === root,
+        typeof prefix === "string" && !path.isAbsolute(prefix) &&
+        !prefix.split("/").includes("..") && path.resolve(root, prefix, source) === root,
       `${marketplaceFile}: ${name} must point to the repository root as a local plugin.`,
     );
 
-    const manifest = readJson(path.resolve(root, source, manifestFile));
+    const pluginRoot = path.resolve(root, prefix, source);
+    const manifest = readJson(path.join(pluginRoot, manifestFile));
     requireCondition(manifest?.name === name, `${manifestFile}: expected plugin name ${name}.`);
     requireCondition(
       typeof manifest.version === "string" && manifest.version.trim() !== "",
@@ -58,10 +79,14 @@ function checkPackaging(root) {
       `${marketplaceFile}: expected entry version ${manifest.version}, got ${entry.version}.`,
     );
 
+    requireCondition(
+      format !== "claude" || entry.strict !== false || entry.skills === undefined,
+      `${marketplaceFile}: a skills override requires strict mode with the native Claude manifest.`,
+    );
     const skillPaths = [manifest.skills, entry.skills].filter((value) => value !== undefined).flat();
     requireCondition(
       (!codex || typeof manifest.skills === "string") && skillPaths.every(
-        (value) => isLocalPath(value) && path.resolve(root, source, value) === path.join(root, "skills"),
+        (value) => isLocalPath(value) && path.resolve(pluginRoot, value) === path.join(pluginRoot, "skills"),
       ) && manifest.skills?.length !== 0 && entry.skills?.length !== 0,
       `${manifestFile} and ${marketplaceFile}: skills must resolve to the shared skills directory.`,
     );
@@ -77,11 +102,7 @@ function checkPackaging(root) {
   }
 
   const skills = path.join(root, "skills");
-  const directories = fs.existsSync(skills) ? fs.readdirSync(skills, { withFileTypes: true }) : [];
-  const discovered = directories
-    .filter((entry) => !entry.name.startsWith(".") && entry.isDirectory())
-    .map((entry) => path.join(skills, entry.name, "SKILL.md"))
-    .filter((file) => fs.statSync(file, { throwIfNoEntry: false })?.isFile());
+  const discovered = fs.existsSync(skills) ? findSkills(skills) : [];
   const expected = path.join(root, skill);
   requireCondition(
     discovered.length === 1 && discovered[0] === expected,
@@ -93,6 +114,15 @@ function checkPackaging(root) {
   requireCondition(
     names.length === 1 && /^name[ \t]*:[ \t]+(?:clear-writing|"clear-writing"|'clear-writing')[ \t]*(?:[ \t]+#.*)?$/.test(names[0]),
     `${skill}: expected frontmatter name ${name}.`,
+  );
+
+  const descriptions = [...(frontmatter ?? "").matchAll(/^description[ \t]*:[ \t]*(.*)(?:\r?\n((?:[ \t]*\r?\n)*[ \t]+\S[^\r\n]*))?/gm)];
+  const description = descriptions[0]?.[1].trim();
+  requireCondition(
+    descriptions.length === 1 && description &&
+      !/^(?:null|~|''|"")(?:[ \t]+#.*)?$/i.test(description) && !description.startsWith("#") &&
+      (!/^[|>]/.test(description) || descriptions[0][2]),
+    `${skill}: expected a non-empty frontmatter description.`,
   );
 
   return version;
