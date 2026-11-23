@@ -19,4 +19,4 @@ jobs:
       - name: Check packaging
         run: node scripts/check-packaging.cjs
       - name: Run packaging fixtures
-        run: node --test scripts/check-packaging.test.cjs
+        run: node --test test/check-packaging.test.cjs
