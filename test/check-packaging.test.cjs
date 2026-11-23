@@ -99,7 +99,7 @@ for (const [label, changes, status, output] of cases) {
       fs.mkdirSync(path.dirname(file), { recursive: true });
       fs.writeFileSync(file, typeof data === "string" ? data : JSON.stringify(data));
     }
-    const result = spawnSync(process.execPath, [path.join(__dirname, "check-packaging.cjs"), root], {
+    const result = spawnSync(process.execPath, [path.join(__dirname, "../scripts/check-packaging.cjs"), root], {
       encoding: "utf8",
     });
     assert.ifError(result.error);
