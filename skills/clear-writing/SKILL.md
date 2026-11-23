@@ -69,7 +69,6 @@ Keep list hierarchy explicit and longer interpretation outside tables.
 Write one prose sentence per Markdown source line, with one blank line between paragraphs and around headings, lists, tables, and fences.
 Keep separate sentences on separate lines without semicolons or fixed-width reflow.
 Use repository formatting checks where applicable.
-When rendering needs verification, inspect the affected element at the intended reading width.
 
 ## Task-specific guidance
 
