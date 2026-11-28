@@ -5,26 +5,29 @@ const os = require("node:os");
 const path = require("node:path");
 const test = require("node:test");
 
-const plugin = { name: "clear-writing", version: "3.4.5" };
-const marketplace = { name: "clear-writing", plugins: [{ name: "clear-writing", source: "./" }] };
-const fixture = {
-  ".claude-plugin/plugin.json": plugin,
-  ".claude-plugin/marketplace.json": marketplace,
-  ".codex-plugin/plugin.json": { ...plugin, skills: "./skills/" },
-  ".agents/plugins/marketplace.json": {
-    ...marketplace,
-    plugins: [{ name: "clear-writing", source: { source: "local", path: "./" } }],
-  },
-  ".cursor-plugin/plugin.json": plugin,
-  ".cursor-plugin/marketplace.json": marketplace,
-  "skills/clear-writing/SKILL.md": "---\r\nname: 'clear-writing'\r\ndescription: A fixture.\r\n---\r\n",
-};
+const plugin = { name: "clear-writing", version: "2026.11.27-1" };
+const marketplace = { name: "clear-writing", plugins: [{ ...plugin, source: "./" }] };
 
 const cases = [
-  ["accepts aligned versions and one skill", {}, 0, /3\.4\.5/],
+  ["accepts aligned versions and one skill", {}, 0, /2026\.11\.27-1\./],
+  ["accepts a multi-digit sequence", {}, 0, /2026\.11\.27-12\./, "2026.11.27-12"],
+  ["accepts a zero-padded month and day", {}, 0, /2026\.01\.02-1\./, "2026.01.02-1"],
+  ...["2026.11.27.01", "2026.11.27", "2026.11.27-01", "2026.11.27-1.2", "2026.11.27-0"].map(
+    (version) => [
+      `rejects version ${version} even when versions match`,
+      {},
+      1,
+      /\.claude-plugin\/plugin\.json.*expected version in yyyy\.MM\.dd-seq format/,
+      version,
+    ],
+  ),
   ["rejects a version mismatch", {
-    ".codex-plugin/plugin.json": { ...plugin, version: "3.4.6", skills: "./skills/" },
-  }, 1, /\.codex-plugin\/plugin\.json.*expected version 3\.4\.5/],
+    ".codex-plugin/plugin.json": { ...plugin, version: "2026.11.27-2", skills: "./skills/" },
+    ".agents/plugins/marketplace.json": {
+      ...marketplace,
+      plugins: [{ ...plugin, version: "2026.11.27-2", source: { source: "local", path: "./" } }],
+    },
+  }, 1, /\.codex-plugin\/plugin\.json.*expected version 2026\.11\.27-1/],
   ["rejects a different plugin name", {
     ".cursor-plugin/plugin.json": { ...plugin, name: "other" },
   }, 1, /\.cursor-plugin\/plugin\.json.*expected plugin name/],
@@ -62,9 +65,15 @@ const cases = [
   ["rejects a stale marketplace entry version", {
     ".cursor-plugin/marketplace.json": {
       ...marketplace,
-      plugins: [{ ...marketplace.plugins[0], version: "3.4.4" }],
+      plugins: [{ ...marketplace.plugins[0], version: "2026.11.26-1" }],
     },
-  }, 1, /\.cursor-plugin\/marketplace\.json.*expected entry version 3\.4\.5/],
+  }, 1, /\.cursor-plugin\/marketplace\.json.*expected entry version 2026\.11\.27-1/],
+  ["rejects a marketplace entry without a version", {
+    ".cursor-plugin/marketplace.json": {
+      ...marketplace,
+      plugins: [{ name: "clear-writing", source: "./" }],
+    },
+  }, 1, /\.cursor-plugin\/marketplace\.json.*expected entry version 2026\.11\.27-1/],
   ["rejects a Codex skills path that hides the packaged skill", {
     ".codex-plugin/plugin.json": { ...plugin, skills: "./missing" },
   }, 1, /\.codex-plugin\/plugin\.json.*shared skills directory/],
@@ -80,17 +89,31 @@ const cases = [
   }, 1, /expected a non-empty frontmatter description/],
   ["accepts an indented skill description", {
     "skills/clear-writing/SKILL.md": "---\nname: clear-writing\ndescription:\n  A fixture.\n---\n",
-  }, 0, /3\.4\.5/],
+  }, 0, /2026\.11\.27-1\./],
   ["accepts a folded skill description", {
     "skills/clear-writing/SKILL.md": "---\nname: clear-writing\ndescription: >-\n  A fixture.\n---\n",
-  }, 0, /3\.4\.5/],
+  }, 0, /2026\.11\.27-1\./],
   ["rejects a renamed skill", {
     "skills/clear-writing/SKILL.md": "---\nname: other\ndescription: A fixture.\n---\n",
   }, 1, /expected frontmatter name/],
 ];
 
-for (const [label, changes, status, output] of cases) {
+for (const [label, changes, status, output, version = plugin.version] of cases) {
   test(label, (context) => {
+    const manifest = { ...plugin, version };
+    const catalog = { ...marketplace, plugins: [{ ...manifest, source: "./" }] };
+    const fixture = {
+      ".claude-plugin/plugin.json": manifest,
+      ".claude-plugin/marketplace.json": catalog,
+      ".codex-plugin/plugin.json": { ...manifest, skills: "./skills/" },
+      ".agents/plugins/marketplace.json": {
+        ...catalog,
+        plugins: [{ ...manifest, source: { source: "local", path: "./" } }],
+      },
+      ".cursor-plugin/plugin.json": manifest,
+      ".cursor-plugin/marketplace.json": catalog,
+      "skills/clear-writing/SKILL.md": "---\r\nname: 'clear-writing'\r\ndescription: A fixture.\r\n---\r\n",
+    };
     const root = fs.mkdtempSync(path.join(os.tmpdir(), "clear-writing-packaging-"));
     context.after(() => fs.rmSync(root, { recursive: true, force: true }));
     for (const [relativePath, data] of Object.entries({ ...fixture, ...changes })) {

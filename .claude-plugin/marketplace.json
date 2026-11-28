@@ -6,6 +6,7 @@
   "plugins": [
     {
       "name": "clear-writing",
+      "version": "2026.11.19-1",
       "source": "./",
       "description": "Write and revise clear, relevant responses with readable Markdown."
     }
