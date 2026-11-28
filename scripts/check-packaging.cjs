@@ -71,11 +71,12 @@ function checkPackaging(root) {
     const manifest = readJson(path.join(pluginRoot, manifestFile));
     requireCondition(manifest?.name === name, `${manifestFile}: expected plugin name ${name}.`);
     requireCondition(
-      typeof manifest.version === "string" && manifest.version.trim() !== "",
-      `${manifestFile}: expected a non-empty version.`,
+      typeof manifest.version === "string" &&
+        /^[0-9]{4}\.(?:0[1-9]|1[0-2])\.(?:0[1-9]|[12][0-9]|3[01])-[1-9][0-9]*$/.test(manifest.version),
+      `${manifestFile}: expected version in yyyy.MM.dd-seq format, got ${manifest.version}.`,
     );
     requireCondition(
-      entry.version === undefined || entry.version === manifest.version,
+      entry.version === manifest.version,
       `${marketplaceFile}: expected entry version ${manifest.version}, got ${entry.version}.`,
     );
 

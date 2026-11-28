@@ -156,6 +156,9 @@ Replace `/absolute/path/to/clear-writing` below with the checkout's absolute pat
 
 ## Check packaging
 
+Use `yyyy.MM.dd-seq` for the plugin version in every host manifest and marketplace entry, such as `2026.11.19-1`.
+Pad the date fields and start each day's sequence at `1` without leading zeros.
+
 Run `node scripts/check-packaging.cjs` from the checkout to verify the native manifests, marketplace entries, and shared skill.
 Run `node --test test/check-packaging.test.cjs` to test the check against passing and failing packages.
 Both commands run offline with Node.js 18.13 or later.
